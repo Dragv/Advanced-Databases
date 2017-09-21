@@ -61,10 +61,14 @@ def main():
     for i, r in ecsv.iterrows():
         g.nodes[r['node1']].insertAdj(g.nodes[r['node2']], r['weight'])
         #print(r['node1'] + "," + r['node2'])
+
+    print("Nodes in the graph: " + str(g.size))
     breathResult = g.bfs("fd76a732ef2995ba40db19249ffae6d3e7164852")
+    print("Nodes after Breath-First Search algorithm was applied: " + str(len(breathResult)))
     for i in range(len(breathResult)):
         print (breathResult[i].toString())
     #depthResult = g.dfs("fd76a732ef2995ba40db19249ffae6d3e7164852")
+    #print("Nodes after Depth-First Search algorithm was applied: " + str(len(depthResult)))
     #for i in range(len(depthResult)):
     #    print (depthResult[i].toString())
 
